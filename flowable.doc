@@ -1,0 +1,11 @@
+Run flowable on docker
+  
+docker run -d --name flowable \
+  -p 8080:8080 \
+  -e JAVA_OPTS="-Xmx1024m -Xss256m" \
+  -e FLOWABLE_DB_URL="jdbc:mysql://localhost:3306/flowable" \
+  -e FLOWABLE_DB_USERNAME="flowable" \
+  -e FLOWABLE_DB_PASSWORD="flowable" \
+  --cpus=2 \
+  --memory=4g \
+  flowable/flowable:latest
