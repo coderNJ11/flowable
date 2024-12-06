@@ -48,5 +48,19 @@ docker-compose up -d
 read kafka topics name
 docker exec -it kafka-broker-1 kafka-topics --bootstrap-server localhost:19092 --list
 
+
 create kafka topic 
 docker exec -it kafka-broker-1 kafka-topics --bootstrap-server localhost:19092 --create --topic my-topic --partitions 1 --replication-factor 1
+
+Go inside kafka continaer
+docker exec -it kafka-broker-1 bash
+
+Run producer 
+1. got o bin dir
+2. kafka-console-producer --bootstrap-server localhost:19092 --topic my-topic
+
+Run Conumer
+1. go to bin dir
+2. kafka-console-consumer --bootstrap-server localhost:19092 --topic my-topic --from-beginning
+
+
