@@ -23,3 +23,33 @@ docker run -d --name flowable \
   --cpus=2 \
   --memory=4g \
   flowable/all-in-one:latest
+
+
+Enhaced tracing
+docker run -d --name flowable \
+  -p 8080:8080 \
+  -e JAVA_OPTS="-Xmx1024m -Xss256m" \
+  -e FLOWABLE_DB_URL="jdbc:mysql://localhost:3306/flowable" \
+  -e FLOWABLE_DB_USERNAME="flowable" \
+  -e FLOWABLE_DB_PASSWORD="flowable" \
+  -e FLOWABLE_MODELER_ENABLED=true \
+  -e FLOWABLE_MODELER_USERNAME="admin" \
+  -e FLOWABLE_MODELER_PASSWORD="test" \
+  -e FLOWABLE_TASK_ENABLED=true \
+  -e FLOWABLE_TASK_USERNAME="task" \
+  -e FLOWABLE_TASK_PASSWORD="task" \
+  -e FLOWABLE_ADMIN_ENABLED=true \
+  -e FLOWABLE_ADMIN_USERNAME="admin" \
+  -e FLOWABLE_ADMIN_PASSWORD="admin" \
+  -e FLOWABLE_IDMS_ENABLED=true \
+  -e FLOWABLE_IDMS_USERNAME="idms" \
+  -e FLOWABLE_IDMS_PASSWORD="idms" \
+  -e FLOWABLE_LOGGING_LEVEL=DEBUG \
+  -e FLOWABLE_LOGGING_FILE=/var/log/flowable/flowable.log \
+  -e FLOWABLE_ENHANCED_LOGGING=true \
+  -e FLOWABLE_TRACING_ENABLED=true \
+  -e FLOWABLE_TRACING_LEVEL=TRACE \
+  -e FLOWABLE_TRACING_FILE=/var/log/flowable/flowable-trace.log \
+  --cpus=2 \
+  --memory=4g \
+  flowable/all-in-one:latest
