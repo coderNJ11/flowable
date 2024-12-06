@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+flowable:
+  common:
+    app:
+      id: flowable
+      name: Flowable Example
+  idm:
+    app:
+      admin:
+        user-id: admin
+        password: test
+
+  modeler:
+    app: true
+
+  task:
+    app: true
+
+  admin:
+    app: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.flowable: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,38 @@
+[
+  {
+    "key": "adminengage",
+    "name": "Flowable Administration User",
+    "allowedFeatures": [
+      "audioMessage",
+      "bubbles",
+      "cases",
+      "changeContactPassword",
+      "changeOwnPassword",
+      "clearMessage",
+      "contacts",
+      "createConversation",
+      "createUser",
+      "createWork",
+      "editContactAvatar",
+      "editConversationAvatar",
+      "editMessage",
+      "editOwnAvatar",
+      "emojiPicker",
+      "fileUpload",
+      "inputValidation",
+      "markdownInput",
+      "processes",
+      "reports",
+      "reportsMetrics",
+      "sendMessageFromProfile",
+      "slashActions",
+      "tasks",
+      "templateManagement",
+      "videoMessage",
+      "websockets",
+      "work",
+      "actuators",
+      "user-mgmt"
+    ]
+  }
+]
