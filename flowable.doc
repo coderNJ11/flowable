@@ -18,6 +18,8 @@ docker run -d --name flowable \
   -e FLOWABLE_IDMS_ENABLED=true \
   -e FLOWABLE_IDMS_USERNAME="idms" \
   -e FLOWABLE_IDMS_PASSWORD="idms" \
+  -e FLOWABLE_SCRIPTING_JS_ENABLED=true \
+  -e FLOWABLE_SCRIPTING_JS_ENGINE=nashorn \
   --cpus=2 \
   --memory=4g \
-  flowable/flowable-all-in-one:latest
+  flowable/all-in-one:latest
