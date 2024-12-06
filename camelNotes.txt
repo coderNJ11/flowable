@@ -1,0 +1,21 @@
+<camelContext xmlns="http://camel.apache.org/schema/blueprint">
+  <route>
+    <from uri="flowable-camel-component://sendOrder"/>
+    <setHeader headerName="Content-Type">
+      <constant>application/json</constant>
+    </setHeader>
+    <setHeader headerName="Authorization">
+      <constant>Bearer my-token</constant>
+    </setHeader>
+    <setBody>
+      <simple>
+        {
+          "orderId": "${header.orderId}",
+          "customerName": "${header.customerName}",
+          "orderTotal": "${header.orderTotal}"
+        }
+      </simple>
+    </setBody>
+    <to uri="http://localhost:8082/sendOrder"/>
+  </route>
+</camelContext>
